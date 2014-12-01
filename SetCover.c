@@ -10,6 +10,7 @@
 #include <assert.h>
 #include <string.h>
 #include <stdbool.h>
+#include <signal.h>
 
 //buffer used by input statements
 char inbuf[1024];
@@ -56,7 +57,15 @@ void createSolutionStruct();
 void copySolutionToBest();
 void sortSubSets();
 
+void intHandler(int dummy) {
+	printSolution(bestSolution);
+    exit(0);
+}
+
 int main(int argc, char *argv[]) {
+
+	signal(SIGINT, intHandler);
+
 	init_args(argc, argv);
 	readGameFile(_file);
 	sortSubSets();

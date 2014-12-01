@@ -9,6 +9,10 @@ Run
 -------
 ./SetCover -f tests/s-k-20-35.txt
 
+Set Run Limit 60s - will print out best solution so far on SIGINT signal
+-------
+timeout --signal=INT 60s ./SetCover -f ../tests/s-k-35-65.txt
+
 You are to complete this design problem on your own without a partner. You should think about the problem from scratch and build something from the ground up that you fully understand. Make sure you understand the assigned problem thoroughly before you being programming. If you have a preference, you may use any programming language you wish, but if you don't have a compelling reason, you are encouraged to use C. (It would be appreciated if you wrote your code in such a way that I could run it on something I have access to.)
 
 Remember, the reason we study algorithms is to find fast ways to solve problems. Analysis gives us a framework to compare different algorithms. but it washes away questions about constants, difficulty of implementation, and performance in practice. The design problems make us confront these issues. In this lab, you are to produce exact solutions as fast as possible.
